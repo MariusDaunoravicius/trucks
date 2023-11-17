@@ -9,8 +9,8 @@ use App\Models\Truck;
 
 class ShowAction
 {
-    public function __invoke(int $id): TruckResource
+    public function __invoke(Truck $truck): TruckResource
     {
-        return new TruckResource(Truck::findOrFail($id));
+        return new TruckResource($truck);
     }
 }
